@@ -57,7 +57,7 @@ void task1()
             }
         }
     }
-
+    
     free(arr);
     task_exit();
     while (1);
@@ -65,6 +65,7 @@ void task1()
 
 void task2()
 {
+    
     int size = 512;
     int *matrix[size], *result[size];
     for (int i = 0; i < size; ++i) {
@@ -117,6 +118,7 @@ void task4()
     int resource_list[3] = {0, 1, 2};
     get_resources(3, resource_list);
     task_sleep(70);     // using resources
+    
     release_resources(3, resource_list);
     task_exit();
     while (1);
@@ -170,6 +172,7 @@ void task8()
 
 void task9()
 {
+    
     int resource_list_1[1] = {5};
     get_resources(1, resource_list_1);
     task_sleep(80);     // using resources

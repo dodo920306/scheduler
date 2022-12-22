@@ -105,6 +105,7 @@ void shell()
 			for (int i = 0; i < num_builtins(); ++i)
 				if (strcmp(cmd->head->args[0], builtin_str[i]) == 0)
     				status = (*builtin_func[i])(cmd->head->args);
+			
 			if (cmd->in_file)  dup2(in, 0);
 			if (cmd->out_file) dup2(out, 1);
 			close(in);
@@ -112,15 +113,16 @@ void shell()
 		}
 		if (status == -1)
 			status = fork_pipes(cmd);
-
+		// printf("dd\n");
 		while (cmd->head) {
 			struct pipes *temp = cmd->head;
       		cmd->head = cmd->head->next;
-			free(temp->args);
-   	    	free(temp);
+			// free(temp->args);
+   	    	// free(temp);
    		}
-		free(cmd);
-		free(buffer);
+		// printf("dd\n");
+		// free(cmd);
+		// free(buffer);
 		
 		if (status == 0)
 			break;

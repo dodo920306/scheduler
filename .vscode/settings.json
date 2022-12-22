@@ -1,0 +1,6 @@
+{
+    "files.associations": {
+        "function.h": "c",
+        "builtin.h": "c"
+    }
+}
